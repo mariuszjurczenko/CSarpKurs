@@ -7,7 +7,7 @@ namespace StudentDiary
     class Diary
     {
         // Stan (zmienne - pola)
-        List<float> ratings;
+        List<float> ratings = new List<float>();
 
 
         // Zachowania
