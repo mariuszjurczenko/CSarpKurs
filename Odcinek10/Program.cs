@@ -19,9 +19,9 @@ namespace Odcinek10
 
             Diary diary3 = diary2;
             diary3.AddRating(1);
+            diary3.AddRating(5.0f);
+            diary3.AddRating(8.4f);
 
-
-            int liczba = 2;
         }
     }
 }

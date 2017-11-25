@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Odcinek10
@@ -14,13 +13,20 @@ namespace Odcinek10
         // Stan (zmienne - pola)
         List<float> ratings;
 
-
         // Zachowania
+        /// <summary>
+        /// Dodawanie oceny
+        /// </summary>
+        /// <param name="rating"></param>
         public void AddRating(float rating)
         {
             ratings.Add(rating);
         }
 
+        /// <summary>
+        /// Obliczamy srednia naszych ocen
+        /// </summary>
+        /// <returns></returns>
         public float CalculateAverage()
         {
             float sum = 0, avg = 0;
@@ -35,11 +41,19 @@ namespace Odcinek10
             return avg;
         }
 
+        /// <summary>
+        /// Pobieramy najwyzsza ocene
+        /// </summary>
+        /// <returns></returns>
         public float GiveMaxRating()
         {
             return ratings.Max();
         }
 
+        /// <summary>
+        /// Pobieramy najnizsza ocene
+        /// </summary>
+        /// <returns></returns>
         public float GiveMinRating()
         {
             return ratings.Min();
