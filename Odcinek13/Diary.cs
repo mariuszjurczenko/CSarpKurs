@@ -8,10 +8,18 @@ namespace Odcinek13
         public Diary()
         {
             ratings = new List<float>();
+            Count++;
+            Count2++;
         }
 
         // Stan (zmienne - pola)
         private List<float> ratings;
+
+        public static float MinGrade = 0;
+        public static float MaxGrade = 10;
+        public static long Count = 0;
+
+        public long Count2  = 0;
 
         // Zachowania
         public void AddRating(float rating)
