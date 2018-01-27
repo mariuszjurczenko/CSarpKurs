@@ -29,6 +29,13 @@ namespace Typy
 
             Console.WriteLine(x1);
 
+            DateTime d;
+
+            string name1 = "Marcin";
+            string name2 = "marcin";
+
+            bool areEqual = name1.Equals(name2, StringComparison.CurrentCulture);
+            Console.WriteLine(areEqual);
         }
     }
 }
