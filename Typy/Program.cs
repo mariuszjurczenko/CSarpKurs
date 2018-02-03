@@ -17,6 +17,27 @@ namespace Typy
 
         static void Main(string[] args)
         {
+            //PassByValueAndRef();
+
+            Immutable();
+
+
+        }
+
+        private static void Immutable()
+        {
+            string name = " Marcin ";
+            name = name.Trim();
+
+            DateTime date = new DateTime(2015, 3, 10);
+            date = date.AddHours(48);
+
+            Console.WriteLine(name);
+            Console.WriteLine(date);
+        }
+
+        private static void PassByValueAndRef()
+        {
             Diary d1 = new Diary();
             Diary d2 = d1;
 
@@ -28,14 +49,6 @@ namespace Typy
             IncrementNumber(out x1);
 
             Console.WriteLine(x1);
-
-            DateTime d;
-
-            string name1 = "Marcin";
-            string name2 = "marcin";
-
-            bool areEqual = name1.Equals(name2, StringComparison.CurrentCulture);
-            Console.WriteLine(areEqual);
         }
     }
 }
