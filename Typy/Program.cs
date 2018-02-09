@@ -19,9 +19,33 @@ namespace Typy
         {
             //PassByValueAndRef();
 
-            Immutable();
+            //Immutable();
 
+            Arrays();
+        }
 
+        private static void Arrays()
+        {
+            float[] ratings;
+            ratings = new float[4];
+
+            AddRatings(ratings);
+
+            foreach (var rating in ratings)
+            {
+                Console.WriteLine(rating);
+            }
+        }
+
+        private static void AddRatings(float[] ratings)
+        {
+            if (ratings.Length >= 4)
+            {
+                ratings[0] = 4.2f;
+                ratings[1] = 6.7f;
+                ratings[2] = 3f;
+                ratings[3] = 8.5f;
+            }
         }
 
         private static void Immutable()
