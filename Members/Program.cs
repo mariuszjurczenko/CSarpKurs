@@ -12,9 +12,30 @@ namespace Members
             diary.AddRating(8.4f);
 
             DiaryStatistics stats = diary.ComputeStatistics();
-            Console.WriteLine(stats.AverageGrade);
-            Console.WriteLine(stats.MaxGrade);
-            Console.WriteLine(stats.MinGrade);
-        }   
+            WriteResult("Average", stats.AverageGrade,  3, 5, 7,8,9 );
+            WriteResult("Max", (int)stats.MaxGrade);
+            WriteResult("Min", (long)stats.MinGrade);
+            WriteResult("Min", stats.MinGrade, 1);
+        }
+
+        static void WriteResult(string description, params float[] result)
+        {
+            Console.WriteLine(description + ": " + result[0] + "  " + result[4]);
+        }
+
+        static void WriteResult(string description, int result)
+        {
+            Console.WriteLine(description + ": " + result);
+        }
+
+        static void WriteResult(string description, long result)
+        {
+            Console.WriteLine(description + ": " + result);
+        }
+
+        static void WriteResult(string description, float result, long test)
+        {
+            Console.WriteLine($"{description}: {result:F3}: {2}: {3}: {4}: {5} ");
+        }
     }
 }
