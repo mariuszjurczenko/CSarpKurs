@@ -14,7 +14,23 @@ namespace Members
         // Stan (zmienne - pola)
         private List<float> ratings;
 
-        public string Name;
+        private string _name;
+
+        public string Name
+        {
+            get
+            {
+                return _name.ToUpper();
+            }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _name = value;
+                }
+            }
+        }
+
 
         // Zachowania
         public void AddRating(float rating)
