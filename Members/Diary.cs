@@ -26,11 +26,19 @@ namespace Members
             {
                 if (!string.IsNullOrEmpty(value))
                 {
+                    if (_name != value)
+                    {
+                        NameChengaed(_name, value);
+                    }
+
                     _name = value;
+
                 }
             }
         }
 
+        // Delegat
+        public NameChangedDelegate NameChengaed;
 
         // Zachowania
         public void AddRating(float rating)
