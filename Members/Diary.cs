@@ -28,7 +28,11 @@ namespace Members
                 {
                     if (_name != value)
                     {
-                        NameChengaed(_name, value);
+                        NameChangedEventArgs args = new NameChangedEventArgs();
+                        args.ExistingName = _name;
+                        args.NewName = value;
+
+                        NameChengaed(this, args);
                     }
 
                     _name = value;
@@ -38,7 +42,7 @@ namespace Members
         }
 
         // Delegat
-        public NameChangedDelegate NameChengaed;
+        public event NameChangedDelegate NameChengaed;
 
         // Zachowania
         public void AddRating(float rating)
