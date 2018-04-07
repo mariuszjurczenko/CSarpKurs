@@ -13,9 +13,46 @@ namespace FlowControl
 
         static void Main(string[] args)
         {
+            //instructionIf();
+
+            Console.WriteLine("Podaj imie: " );
+            name =  Console.ReadLine();
+
+            switch (name)
+            {
+                case "Marcin":
+                    Method1();
+                    break;
+                case "Tomek":
+                    Method2();
+                    Method3();
+                    break;
+                case "Ania":
+                    Method1();
+                    Method2();
+                    Method3();
+                    Method4();
+                    break;
+                default:
+                    Method4();
+                    break;
+            }
+
+
+
+
+
+
+
+            Console.ReadKey();
+
+        }
+
+        private static void instructionIf()
+        {
             Console.WriteLine("Podaj swój wiek: ");
             age = int.Parse(Console.ReadLine());
-        
+
             Console.WriteLine("Podaj swoje imie: ");
             name = Console.ReadLine();
 
@@ -43,29 +80,26 @@ namespace FlowControl
             {
                 Method4();
             }
-
-            Console.ReadKey();
-
-            }
+        }
 
         private static void Method4()
         {
-            Console.WriteLine("Masz 30 lub wiecej lat");
+            Console.WriteLine("jestes w metodzie 4");
         }
 
         private static void Method3()
         {
-            Console.WriteLine("Twój wiek jest wiekszy lub równy 20 a mniejszy od 30 i wynosi " + age);
+            Console.WriteLine("jestes w metodzie 3");
         }
 
         private static void Method2()
         {
-            Console.WriteLine("Twój wiek jest wiekszy od 10 a mniejszy od 20 i wynosi " + age);
+            Console.WriteLine("jestes w metodzie 2");
         }
 
         private static void Method1()
         {
-            Console.WriteLine("Masz 10 lub mniej lat a dokładnie masz " + age);
+            Console.WriteLine("jestes w metodzie 1");
         }
     }
 }
