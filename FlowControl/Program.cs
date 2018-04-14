@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FlowControl
 {
@@ -14,9 +10,72 @@ namespace FlowControl
         static void Main(string[] args)
         {
             //instructionIf();
+            //instructionSwitch();
 
-            Console.WriteLine("Podaj imie: " );
-            name =  Console.ReadLine();
+            //instructionFor();
+            //instructionDoWhileDo();
+            //instructionForeach();
+
+
+
+
+            Console.ReadKey();
+        }
+
+     
+
+        private static void instructionFor()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int a = 0; a < 2; a++)
+                {
+                    Console.WriteLine("wartość i : {0} oraz wartosc a : {1} ", i, a);
+                }
+            }
+
+            for (; ; )
+            {
+                Console.WriteLine("Podaj Imie");
+                string text = Console.ReadLine();
+
+                Console.WriteLine("Masz na imie {0}", text);
+            }
+        }
+
+        private static void instructionDoWhileDo()
+        {
+            int i = 1;
+
+            while (i > 3)
+            {
+                Console.WriteLine("wartosc i {0}", i);
+                i++;
+            }
+
+            do
+            {
+                Console.WriteLine("wartosc i {0}", i);
+                i++;
+            } while (i > 3);
+        }
+
+        private static void instructionForeach()
+        {
+            int[] tab = { 1, 2, 3, 5, 8, 12, 21 };
+
+            foreach (var item in tab)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+
+
+        private static void instructionSwitch()
+        {
+            Console.WriteLine("Podaj imie: ");
+            name = Console.ReadLine();
 
             switch (name)
             {
@@ -37,15 +96,6 @@ namespace FlowControl
                     Method4();
                     break;
             }
-
-
-
-
-
-
-
-            Console.ReadKey();
-
         }
 
         private static void instructionIf()
@@ -81,6 +131,11 @@ namespace FlowControl
                 Method4();
             }
         }
+
+
+
+
+
 
         private static void Method4()
         {
