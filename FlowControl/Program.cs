@@ -16,13 +16,60 @@ namespace FlowControl
             //instructionDoWhileDo();
             //instructionForeach();
 
+            int[] ages = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
+            foreach (int age in ages)
+            {
+                if (age == 2)
+                {
+                    Console.WriteLine("Wiek wynosi : {0}", age);
+                    continue;
+                    Console.WriteLine("Hello");
+                }
+
+                if (age == 4)
+                {
+                    Console.WriteLine("Wiek wynosi : {0}", age);
+                    break;
+                    Console.WriteLine("Hello");
+                }
+            }
+
+            foreach (int age in ages)
+            {
+                if (age == 2)
+                {
+                    Console.WriteLine("Wiek wynosi : {0}", age);
+                    goto skip;
+                    Console.WriteLine("Hello");
+                }
+            }
+
+            // jakis kod
+
+            skip:
+            Console.WriteLine("Hello");
+
+
+            CheckAges(ages);
 
 
             Console.ReadKey();
         }
 
-     
+
+        #region metody prywatne
+        private static void CheckAges(int[] ages)
+        {
+            foreach (var age in ages)
+            {
+                if (age  == 3)
+                {
+                    Console.WriteLine("Wiek wynosi : {0}", age);
+                    return;
+                }
+            }
+        }
 
         private static void instructionFor()
         {
@@ -156,5 +203,6 @@ namespace FlowControl
         {
             Console.WriteLine("jestes w metodzie 1");
         }
+        #endregion
     }
 }
