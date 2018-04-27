@@ -7,6 +7,7 @@ namespace Members
         static void Main(string[] args)
         {
             Diary diary = new Diary();
+            diary.Name = null;
 
             diary.NameChengaed += OnNameChanged;
             diary.NameChengaed += OnNameChanged2;

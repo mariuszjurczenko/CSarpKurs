@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Members
 {
@@ -24,20 +25,21 @@ namespace Members
             }
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
-                    if (_name != value)
-                    {
-                        NameChangedEventArgs args = new NameChangedEventArgs();
-                        args.ExistingName = _name;
-                        args.NewName = value;
-
-                        NameChengaed(this, args);
-                    }
-
-                    _name = value;
-
+                    throw new ArgumentNullException("Nazwa nie moze być pusta");
                 }
+
+                if (_name != value)
+                {
+                    NameChangedEventArgs args = new NameChangedEventArgs();
+                    args.ExistingName = _name;
+                    args.NewName = value;
+
+                    NameChengaed(this, args);
+                }
+
+                _name = value;
             }
         }
 
