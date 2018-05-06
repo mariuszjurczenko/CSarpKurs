@@ -30,7 +30,7 @@ namespace Members
                     throw new ArgumentNullException("Nazwa nie moze być pusta");
                 }
 
-                if (_name != value)
+                if (_name != value && NameChengaed != null)
                 {
                     NameChangedEventArgs args = new NameChangedEventArgs();
                     args.ExistingName = _name;

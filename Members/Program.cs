@@ -7,8 +7,8 @@ namespace Members
         static void Main(string[] args)
         {
             Diary diary = new Diary();
-            diary.Name = null;
-
+                    
+  
             diary.NameChengaed += OnNameChanged;
             diary.NameChengaed += OnNameChanged2;
             diary.NameChengaed += OnNameChanged3;
@@ -19,6 +19,31 @@ namespace Members
             diary.NameChengaed -= OnNameChanged4;
             diary.NameChengaed -= OnNameChanged4;
             diary.NameChengaed -= OnNameChanged4;
+
+            try
+            {
+                Console.WriteLine("Proszę podaj imie");
+                diary.Name = Console.ReadLine();
+            }
+            catch (ArgumentException ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+            catch (NullReferenceException)
+            {
+
+                Console.WriteLine("Coś poszło nie tak");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+
+            }
+
 
 
             diary.Name = "Dzienniczek Marcina";
